@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .parent{
+            display: grid;
+            row-gap: 6%;
+            margin-left: 35%;
+        }
+        .div1{
+           background-color: antiquewhite; 
+           height: 120px;
+           width: 50%;
+           padding: 20px;
+           
+
+        }
+        .div2{
+           background-color: rgb(194, 170, 230); 
+           height: 120px;
+           width: 50%;
+           padding: 20px;
+
+        }
+        .div3{
+           background-color: #d2ac7a; 
+           height: 120px;
+           width: 50%;
+           padding: 20px;
+
+        }
+     
+            
+        
+    </style>
+</head>
+<body>
+    <center>
+   <div class="parent">
+
+    <div class="div1">
+    <h2>Reverse a String</h2>
+    <input type="text" id="userInput" placeholder="Enter a string">
+    <button onclick="reversestr()">Reverse</button>
+    <p id="result"></p>
+    </div>
+     <div class="div2">
+    <h2>Even number and odd number in an array</h2>
+    <input type="text" id="userarrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="array()">number</button>
+    <p id="result2"></p>
+    </div>
+     <div class="div3">
+    <h2>Check if Even or Odd Sum is Greater</h2>
+    <input type="text" id="numbergraterInput" placeholder="Enter numbers separated by commas">
+    <button onclick="findnum()">Check</button>
+    <p id="result3"></p>
+    </div>
+    </div>
+</center>
+
+
+    
+
+
+    <script>
+        
+
+        function reversestr(){
+            var a="hello"
+        str="";
+        for(i=a.length-1;i>=0;i--){
+            str+=a[i]
+        }
+        console.log(str)
+        document.getElementById("result").innerText = "reverse str: " + str;
+
+        }
+
+        function array(){
+            
+            var arr=[23,54,67,64,46,95,98]
+            evensum=0;
+            oddsum=0;
+            for(i=0;i<arr.length;i++){
+                if(arr[i]%2==0){
+                    evensum+=arr[i];
+                }else {
+                    oddsum+=arr[i];
+                } 
+                console.log(oddsum) 
+                console.log(evensum) 
+            }
+            document.getElementById("result2").innerText = "even sum: " + evensum  ;
+
+            
+        }
+
+
+        function findnum() {
+           var arr1=[1,2,3,4,5,6]
+             evenSum = 0;
+             oddSum = 0;
+
+            for (i = 0; i < arr1.length; i++) {
+                if (arr1[i] % 2 === 0) {
+                    evenSum += arr1[i];  // Add even number to evenSum
+                } else {
+                    oddSum += arr1[i];  // Add odd number to oddSum
+                }
+            }
+
+            if (evenSum > oddSum) {
+                document.getElementById("result3").innerText = "Even numbers have a greater sum.";
+            } else if (oddSum > evenSum) {
+                document.getElementById("result3").innerText = "Odd numbers have a greater sum.";
+            } else {
+                document.getElementById("result3").innerText = "Even and odd numbers have the same sum.";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
